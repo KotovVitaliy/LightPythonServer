@@ -8,7 +8,7 @@ class Viewer:
     router = {
         '/': {
             'tpl': 'main.tpl',
-            'title': 'Main page',
+            'title': 'Главная страница',
             'js': 'main.js'
         },
     }
