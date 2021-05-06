@@ -1,10 +1,9 @@
 import os
 
+from config import ROOT_PATH
+
 
 class Viewer:
-    # todo how to import this from index ???
-    ROOT_PATH = "/Users/vitalijkotov/ProgrammingSchool/LightPythonServer"
-
     # uri => data
     router = {
         '/': {
@@ -29,18 +28,18 @@ class Viewer:
         return html
 
     def _get_header(self):
-        path = self.ROOT_PATH + "/tpl/header.tpl"
+        path = ROOT_PATH() + "/tpl/header.tpl"
         return open(path, 'r').read()
 
     def _get_footer(self):
-        path = self.ROOT_PATH + "/tpl/footer.tpl"
+        path = ROOT_PATH() + "/tpl/footer.tpl"
         return open(path, 'r').read()
 
     def _get_target_tpl(self, uri):
         if uri not in self.router:
             raise Exception(f"No data for URI {uri}")
 
-        path = self.ROOT_PATH + "/tpl/" + self.router[uri]['tpl']
+        path = ROOT_PATH() + "/tpl/" + self.router[uri]['tpl']
 
         if not os.path.isfile(path):
             raise Exception(f"Detected path is not a file: {path}")
