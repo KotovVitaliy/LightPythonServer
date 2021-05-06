@@ -1,5 +1,5 @@
 import pathlib
 
 
-def ROOT_PATH():
-    return pathlib.Path(__file__).parent.absolute()
+def ROOT_PATH() -> str:
+    return str(pathlib.Path(__file__).parent.absolute())
