@@ -75,6 +75,51 @@ $(document).on('mouseout', '.js_size_flipper', function() {
     $(this).css({'width':current_width});
 });
 
+$(document).on('click', '.js_open_overlay', function() {
+    let id = $(this).data('id');
+    let cat_element = data[id];
+    drawOverlay(cat_element, id);
+});
+
+$(document).on('click', '.js_overlay_turn', function () {
+    let id = $(this).data('id');
+    let cat_element = data[id];
+    drawOverlay(cat_element, id);
+});
+
+$(document).on('click', '.js_close_overlay', hideOverlay);
+
+$(document).on('click', '.js_get_price', function () {
+    let id = $(this).data('id');
+    $.get('/ajax/cat/get_price', {id:id}).done(function(data) {
+        $('.js_price').text("Цена: " + data + " рублей");
+    });
+});
+
+function drawOverlay(cat_element, id) {
+    let title = cat_element.name;
+    let image = cat_element.gender == 'F' ? 'f.png' : 'm.png'
+
+    let tpl = overlay_tpl
+        .replace('{TITLE}', title)
+        .replace('{PREV_ID}', id - 1)
+        .replace('{NEXT_ID}', id + 1)
+        .replace('{ID}', id)
+        .replace('{IMG}', "/imgs/" + image)
+        .replace('{AGE}', "Возраст: " + cat_element.age + " лет");
+
+    showOverlay(tpl);
+}
+
+function hideOverlay() {
+    $('#overlay > .ovl_container > .ovl_wrapper').html('');
+    $('#overlay').hide();
+}
+
+function showOverlay(tpl) {
+    $('#overlay > .ovl_container > .ovl_wrapper').html(tpl);
+    $('#overlay').show();
+}
 
 function drawFullCatalog() {
     data.forEach(drawSingleElement);
