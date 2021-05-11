@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.DS_Store
+
 offset_for_groups.txt
 offset_for_antispam.txt
 

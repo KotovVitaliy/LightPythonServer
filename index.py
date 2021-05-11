@@ -1,3 +1,5 @@
+# docker run --rm -p 80:80 --mount type=bind,src=$(pwd),target=/work python python work/index.py
+
 # import os
 from config import ROOT_PATH
 from lib.handler import Handler

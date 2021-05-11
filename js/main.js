@@ -109,15 +109,14 @@ function drawByGender(gender) {
 }
 
 function drawSingleElement(el, index) {
-    let description_line = "Возраст: " + el.age + " мес";
-    let title_line = (el.age < 6 ? ("Котенок ") : (el.gender === "M" ? "Кот " : "Кошка ")) + el.name;
-    let size = ((index + 1) % 9 !== 0) ? 12 : 15;
+    let description_line = "Возраст: " + el.age + " лет";
+    let image = el.gender == 'F' ? 'f.png' : 'm.png'
+    let title_line = el.name;
 
     let tpl = catalog_tpl
         .replace(/{ID}/g, index)
-        .replace(/{SRC}/, "/img/catalog/" + el.src)
+        .replace(/{SRC}/, "/imgs/" + image)
         .replace(/{DESCRIPTION}/, description_line)
-        .replace(/{SIZE}/, size)
         .replace(/{TITLE}/, title_line);
     $('#catalog > div').append(tpl);
 }

@@ -1,12 +1,12 @@
 <br>
 <div id="content" class="greeting">
-    <h3 style="display: inline-block">Зоомагазин</h3>&nbsp;<span class="badge badge-primary">Выбери себе друга</span>
+    <h3 style="display: inline-block">Школьный фотоальбом</h3>&nbsp;<span class="badge badge-primary">Найди друга</span>
     <br><hr>
     <div id="filter" style="display: none;">
         <div class="row">
 
             <div class="filter" id="filter_by_gender">
-                <p>Фильтрация по полу</p>
+                <p>Пол</p>
 
                 <div class="form-check">
                     <input class="form-check-input" name="filter_gender" type="radio" value="" id="filter_gender_all" tabindex="1" checked>
@@ -14,20 +14,16 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" name="filter_gender" type="radio" value="" id="filter_gender_m" tabindex="2">
-                    <label class="form-check-label" for="filter_gender_m">Коты</label>
+                    <label class="form-check-label" for="filter_gender_m">Мужской</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" name="filter_gender" type="radio" value="" id="filter_gender_f" tabindex="3">
-                    <label class="form-check-label" for="filter_gender_f">Кошки</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" name="filter_gender" type="radio" value="" id="filter_gender_k" tabindex="4">
-                    <label class="form-check-label" for="filter_gender_k">Котята</label>
+                    <label class="form-check-label" for="filter_gender_f">Женский</label>
                 </div>
             </div>
 
             <div class="filter" id="filter_by_age">
-                <p>Фильтрация по возрасту</p>
+                <p>Возраст</p>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
@@ -45,10 +41,10 @@
             </div>
 
             <div class="filter" id="filter_by_name">
-                <p>Фильтрация по кличке</p>
+                <p>Имя</p>
 
                 <div class="form-group">
-                    <input type="email" class="form-control" id="filter_by_name_input" aria-describedby="filter_by_name" placeholder="Кличка" tabindex="5">
+                    <input type="email" class="form-control" id="filter_by_name_input" aria-describedby="filter_by_name" placeholder="Имя" tabindex="5">
                     <small class="form-text text-muted filter_by_name_output">Поиск по всем именам</small>
                 </div>
 
